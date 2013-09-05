@@ -1,0 +1,16 @@
+Revision history for AnyEvent-WebSocket-Client
+
+0.05      2013-09-05 15:34:56 -0400
+  - propagate connect error properly
+
+0.04      2013-08-30 09:52:42 -0400
+  - kill some memory cycles
+
+0.03      2013-08-30 08:53:30 -0400
+  - added SSL/TLS support
+
+0.02      2013-08-29 15:38:34 -0400
+  - added AnyEvent only test for when Mojo isn't installed
+
+0.01      2013-08-29 14:49:38 -0400
+  - initial version
