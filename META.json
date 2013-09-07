@@ -30,7 +30,7 @@
             "AnyEvent::Handle" : "0",
             "AnyEvent::Socket" : "0",
             "Moo" : "0",
-            "PerlX::Maybe" : "0",
+            "PerlX::Maybe" : "0.003",
             "Protocol::WebSocket::Frame" : "0",
             "Protocol::WebSocket::Handshake::Client" : "0",
             "Scalar::Util" : "0",
@@ -58,6 +58,6 @@
          "web" : "https://github.com/plicease/anyevent-websocket-client"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
 

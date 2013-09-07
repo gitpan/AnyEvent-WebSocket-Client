@@ -24,7 +24,7 @@ my %WriteMakefileArgs = (
     "AnyEvent::Handle" => 0,
     "AnyEvent::Socket" => 0,
     "Moo" => 0,
-    "PerlX::Maybe" => 0,
+    "PerlX::Maybe" => "0.003",
     "Protocol::WebSocket::Frame" => 0,
     "Protocol::WebSocket::Handshake::Client" => 0,
     "Scalar::Util" => 0,
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     "Protocol::WebSocket::Handshake::Server" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.05",
+  "VERSION" => "0.06",
   "test" => {
     "TESTS" => "t/*.t"
   }

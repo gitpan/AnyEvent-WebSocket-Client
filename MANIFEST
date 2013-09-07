@@ -9,6 +9,7 @@ Makefile.PL
 README
 dist.ini
 example/README
+example/cpanfile
 example/jobrunner
 example/jobserver
 example/jobviewer

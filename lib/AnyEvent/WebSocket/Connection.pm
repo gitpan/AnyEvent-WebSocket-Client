@@ -9,7 +9,7 @@ use Protocol::WebSocket::Frame;
 use Scalar::Util qw( weaken );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 has _stream => (
@@ -102,7 +102,7 @@ AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
