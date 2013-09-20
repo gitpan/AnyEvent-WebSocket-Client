@@ -1,11 +1,11 @@
 .travis.yml
+Build.PL
 Changes
 INSTALL
 LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 dist.ini
 example/README
@@ -13,9 +13,11 @@ example/cpanfile
 example/jobrunner
 example/jobserver
 example/jobviewer
+example/output/7118/1
 example/slowlast
 lib/AnyEvent/WebSocket/Client.pm
 lib/AnyEvent/WebSocket/Connection.pm
+t/00_diag.t
 t/ae.t
 t/mojo.t
 t/new.t

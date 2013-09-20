@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300037, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -19,29 +19,38 @@
       ]
    },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.30"
+            "Module::Build" : "0.3601"
          }
       },
       "runtime" : {
+         "recommends" : {
+            "EV" : "0",
+            "PerlX::Maybe::XS" : "0.003"
+         },
          "requires" : {
             "AnyEvent" : "0",
-            "AnyEvent::Handle" : "0",
-            "AnyEvent::Socket" : "0",
             "Moo" : "0",
             "PerlX::Maybe" : "0.003",
-            "Protocol::WebSocket::Frame" : "0",
-            "Protocol::WebSocket::Handshake::Client" : "0",
-            "Scalar::Util" : "0",
+            "Protocol::WebSocket" : "0.12",
             "URI" : "0",
             "URI::ws" : "0",
             "perl" : "v5.10.0"
          }
       },
       "test" : {
+         "recommends" : {
+            "Devel::Cycle" : "0",
+            "Mojolicious" : "4.34",
+            "Test::Memory::Cycle" : "0"
+         },
          "requires" : {
-            "Protocol::WebSocket::Handshake::Server" : "0",
             "Test::More" : "0"
          }
       }
@@ -58,6 +67,6 @@
          "web" : "https://github.com/plicease/anyevent-websocket-client"
       }
    },
-   "version" : "0.06"
+   "version" : "0.07"
 }
 
