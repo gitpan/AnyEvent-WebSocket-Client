@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132620'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -32,4 +32,4 @@ resources:
   bugtracker: https://github.com/plicease/anyevent-websocket-client/issues
   homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client/
   repository: git://github.com/plicease/anyevent-websocket-client.git
-version: 0.07
+version: 0.08
