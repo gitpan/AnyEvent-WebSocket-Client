@@ -17,12 +17,12 @@ my %module_build_args = (
     "Graham Ollis <plicease\@cpan.org>"
   ],
   "dist_name" => "AnyEvent-WebSocket-Client",
-  "dist_version" => "0.08",
+  "dist_version" => "0.09",
   "license" => "perl",
   "module_name" => "AnyEvent::WebSocket::Client",
   "recommends" => {
     "EV" => 0,
-    "PerlX::Maybe::XS" => "0.003"
+    "PerlX::Maybe::XS" => 0
   },
   "recursive_test_files" => 1,
   "requires" => {
@@ -36,6 +36,7 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Exporter" => 0,
     "Test::More" => 0
   }
 );

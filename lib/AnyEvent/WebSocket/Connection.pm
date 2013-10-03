@@ -9,7 +9,7 @@ use Protocol::WebSocket::Frame;
 use Scalar::Util qw( weaken );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 
 has _stream => (
@@ -47,8 +47,9 @@ sub BUILD
   
   $self->_stream->read_cb(sub {
     $frame->append($_[0]{rbuf});
-    while(my $message = $frame->next)
+    while(defined(my $message = $frame->next))
     {
+      next if !$frame->is_text && !$frame->is_binary;
       $_->($message) for @{ $self->_next_cb };
       @{ $self->_next_cb } = ();
       $_->($message) for @{ $self->_each_cb };
@@ -102,7 +103,7 @@ AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -178,7 +179,11 @@ L<AnyEvent>
 
 =head1 AUTHOR
 
-Graham Ollis <plicease@cpan.org>
+author: Graham Ollis <plicease@cpan.org>
+
+contributors:
+
+Toshio Ito
 
 =head1 COPYRIGHT AND LICENSE
 

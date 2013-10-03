@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132620",
+   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132661",
    "license" : [
       "perl_5"
    ],
@@ -32,7 +32,7 @@
       "runtime" : {
          "recommends" : {
             "EV" : "0",
-            "PerlX::Maybe::XS" : "0.003"
+            "PerlX::Maybe::XS" : "0"
          },
          "requires" : {
             "AnyEvent" : "0",
@@ -47,10 +47,12 @@
       "test" : {
          "recommends" : {
             "Devel::Cycle" : "0",
+            "EV" : "0",
             "Mojolicious" : "3.0",
             "Test::Memory::Cycle" : "0"
          },
          "requires" : {
+            "Exporter" : "0",
             "Test::More" : "0"
          }
       }
@@ -67,6 +69,6 @@
          "web" : "https://github.com/plicease/anyevent-websocket-client"
       }
    },
-   "version" : "0.08"
+   "version" : "0.09"
 }
 

@@ -2,7 +2,7 @@ NAME
     AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 VERSION
-    version 0.08
+    version 0.09
 
 SYNOPSIS
      use AnyEvent::WebSocket::Client;
@@ -82,7 +82,11 @@ SEE ALSO
     *   RFC 6455 The WebSocket Protocol <http://tools.ietf.org/html/rfc6455>
 
 AUTHOR
-    Graham Ollis <plicease@cpan.org>
+    author: Graham Ollis <plicease@cpan.org>
+
+    contributors:
+
+    Toshio Ito
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Graham Ollis.
