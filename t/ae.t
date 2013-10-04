@@ -7,7 +7,7 @@ use AnyEvent::Socket qw( tcp_server);
 use AnyEvent::WebSocket::Client;
 use Protocol::WebSocket::Handshake::Server;
 use Protocol::WebSocket::Frame;
-use Test::More;
+use Test::More tests => 3;
 
 our $timeout = AnyEvent->timer( after => 5, cb => sub {
   diag "timeout!";
@@ -48,7 +48,7 @@ tcp_server undef, undef, sub {
       
       $frame->append($chunk);
       
-      while(my $message = $frame->next) {
+      while(defined(my $message = $frame->next)) {
         note "send $counter";
         $hdl->push_write($frame->new($counter++)->to_bytes);
         if($counter >= $max)
@@ -91,5 +91,3 @@ $connection->on_finish(sub {
 is $done->recv, '1', 'friendly disconnect';
 
 is $last, 9, 'last = 9';
-
-done_testing;

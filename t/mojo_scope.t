@@ -11,6 +11,8 @@ use AnyEvent::WebSocket::Client;
 use lib "t";
 use testlib::Mojo qw(start_mojo);
 
+plan tests => 5;
+
 app->log->level('fatal');
 
 my $finished = 0;
@@ -54,4 +56,3 @@ $server->ioloop->one_tick;
 
 is $finished, 1, 'finished = 1';
 
-done_testing;

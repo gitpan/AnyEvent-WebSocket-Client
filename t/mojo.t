@@ -8,6 +8,8 @@ BEGIN { plan skip_all => 'Requires Mojolicious::Lite' unless eval q{ use Mojolic
 use lib "t";
 use testlib::Mojo qw(start_mojo);
 
+plan tests => 3;
+
 app->log->level('fatal');
 
 websocket '/count/:num' => sub {
@@ -60,4 +62,3 @@ is $done->recv, '1', 'friendly disconnect';
 
 is $last, 9, 'last = 9';
 
-done_testing;

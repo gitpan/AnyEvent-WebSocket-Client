@@ -21,9 +21,11 @@ t/00_diag.txt
 t/ae.t
 t/echo.t
 t/mojo.t
+t/mojo_close.t
+t/mojo_echo.t
+t/mojo_scope.t
+t/mojo_ssl.t
 t/new.t
-t/scope.t
-t/ssl.t
 t/testlib/Mojo.pm
 t/use.t
 xt/release/build_environment.t

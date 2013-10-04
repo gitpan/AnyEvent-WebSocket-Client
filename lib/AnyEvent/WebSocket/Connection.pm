@@ -9,7 +9,7 @@ use Protocol::WebSocket::Frame;
 use Scalar::Util qw( weaken );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 has _stream => (
@@ -91,6 +91,15 @@ sub on_finish
   $self;
 }
 
+
+sub close
+{
+  my($self) = @_;
+
+  $self->_handle->push_write(Protocol::WebSocket::Frame->new(type => 'close')->to_bytes);
+  $self->_handle->push_shutdown;
+}
+
 1;
 
 __END__
@@ -103,7 +112,7 @@ AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.09
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -120,6 +129,12 @@ version 0.09
  $connection->on_finish(sub {
    ...
  });
+ 
+ # close an opened connection
+ # (can do this either inside or outside of
+ # a callback)
+ use AnyEvent::WebSocket::Connection 0.10; # requires 0.10
+ $connection->close;
 
 (See L<AnyEvent::WebSocket::Client> on how to create
 a connection)
@@ -160,6 +175,10 @@ callback.
 =head2 $connection-E<gt>on_finish($cb)
 
 Register a callback to be called when the connection is closed.
+
+=head2 $connection-E<gt>close
+
+Close the connection.
 
 =head1 SEE ALSO
 

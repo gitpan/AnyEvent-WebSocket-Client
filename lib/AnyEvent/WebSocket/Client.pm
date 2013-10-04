@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 has timeout => (
@@ -151,7 +151,7 @@ AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.09
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -178,6 +178,11 @@ version 0.09
    $connection->on_finish(sub {
      ...
    });
+
+   # close the connection (either inside or
+   # outside another callback)
+   use AnyEvent::WebSocket::Client 0.10; # requires 0.10
+   $connection->close;
  
  });
 

@@ -32,6 +32,7 @@
       "runtime" : {
          "recommends" : {
             "EV" : "0",
+            "Math::Random::Secure" : "0",
             "PerlX::Maybe::XS" : "0"
          },
          "requires" : {
@@ -52,7 +53,6 @@
             "Test::Memory::Cycle" : "0"
          },
          "requires" : {
-            "Exporter" : "0",
             "Test::More" : "0"
          }
       }
@@ -69,6 +69,6 @@
          "web" : "https://github.com/plicease/anyevent-websocket-client"
       }
    },
-   "version" : "0.09"
+   "version" : "0.11"
 }
 
