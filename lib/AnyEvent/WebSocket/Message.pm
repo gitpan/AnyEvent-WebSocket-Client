@@ -8,7 +8,7 @@ use warnings NONFATAL => 'all';
 use Encode ();
 
 # ABSTRACT: WebSocket message for AnyEvent
-our $VERSION = '0.11_01'; # VERSION
+our $VERSION = '0.11_02'; # VERSION
 
 
 has body => ( is => 'ro', required => 1 );
@@ -39,7 +39,7 @@ AnyEvent::WebSocket::Message - WebSocket message for AnyEvent
 
 =head1 VERSION
 
-version 0.11_01
+version 0.11_02
 
 =head1 SYNOPSIS
 
@@ -68,27 +68,27 @@ The integer code for the type of message.
 
 =head1 METHODS
 
-=head2 decoded_body
+=head2 $message-E<gt>decoded_body
 
 Returns the body decoded from UTF-8.
 
-=head2 is_text
+=head2 $message-E<gt>is_text
 
 True if the message is text.
 
-=head2 is_binary
+=head2 $message-E<gt>is_binary
 
 True if the message is binary.
 
-=head2 is_close
+=head2 $message-E<gt>is_close
 
 True if the message is a close message.
 
-=head2 is_ping
+=head2 $message-E<gt>is_ping
 
 True if the message is a ping.
 
-=head2 is_pong
+=head2 $message-E<gt>is_pong
 
 True if the message is a pong.
 
