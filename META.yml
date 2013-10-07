@@ -23,6 +23,8 @@ recommends:
   PerlX::Maybe::XS: 0
 requires:
   AnyEvent: 0
+  Carp: 0
+  Encode: 0
   Moo: 0
   PerlX::Maybe: 0.003
   Protocol::WebSocket: 0.12
@@ -33,4 +35,4 @@ resources:
   bugtracker: https://github.com/plicease/anyevent-websocket-client/issues
   homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client/
   repository: git://github.com/plicease/anyevent-websocket-client.git
-version: 0.11
+version: 0.11_01

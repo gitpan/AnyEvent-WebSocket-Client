@@ -16,13 +16,17 @@ example/jobviewer
 example/slowlast
 lib/AnyEvent/WebSocket/Client.pm
 lib/AnyEvent/WebSocket/Connection.pm
+lib/AnyEvent/WebSocket/Message.pm
 t/00_diag.t
 t/00_diag.txt
 t/ae.t
+t/deprecate.t
 t/echo.t
+t/message.t
 t/mojo.t
 t/mojo_close.t
 t/mojo_echo.t
+t/mojo_recieve.t
 t/mojo_scope.t
 t/mojo_ssl.t
 t/new.t

@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.11_01'; # VERSION
 
 
 has timeout => (
@@ -151,7 +151,7 @@ AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.11
+version 0.11_01
 
 =head1 SYNOPSIS
 
@@ -159,7 +159,7 @@ version 0.11
  
  my $client = AnyEvent::WebSocket::Client->new;
  
- $client->connect("ws://localhost:1234")->cb(sub {
+ $client->connect("ws://localhost:1234/service")->cb(sub {
    my $connection = eval { shift->recv };
    if($@) {
      # handle error...
@@ -169,19 +169,22 @@ version 0.11
    $connection->send('a message');
    
    # recieve message from the websocket...
-   $connection->on_each_message(sub {
-     my $message = shift;
+   $connection->on(each_message => sub {
+     # $connection is the same connection object
+     # $message isa AnyEvent::WebSocket::Message
+     my($connection, $message) = @_;
      ...
    });
    
    # handle a closed connection...
-   $connection->on_finish(sub {
+   $connection->on(finish => sub {
+     # $connection is the same connection object
+     my($connection) = @_;
      ...
    });
 
    # close the connection (either inside or
    # outside another callback)
-   use AnyEvent::WebSocket::Client 0.10; # requires 0.10
    $connection->close;
  
  });
@@ -238,6 +241,10 @@ Patches are encouraged to improve it.
 =item *
 
 L<AnyEvent::WebSocket::Connection>
+
+=item *
+
+L<AnyEvent::WebSocket::Message>
 
 =item *
 
