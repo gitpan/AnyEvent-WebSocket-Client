@@ -6,8 +6,9 @@ use Test::More;
 BEGIN { plan skip_all => 'Requires EV' unless eval q{ use EV; 1 } }
 BEGIN { plan skip_all => 'Requires Mojolicious 3.0' unless eval q{ use Mojolicious 3.0; 1 } }
 BEGIN { plan skip_all => 'Requires Mojolicious::Lite' unless eval q{ use Mojolicious::Lite; 1 } }
-use lib "t";
-use testlib::Mojo qw(start_mojo);
+use FindBin;
+use lib $FindBin::Bin;
+use testlib::Mojo;
 
 plan tests => 3;
 
@@ -30,7 +31,7 @@ websocket '/count/:num' => sub {
   });
 };
 
-my ($server, $port) = start_mojo(app => app());
+my ($server, $port) = testlib::Mojo->start_mojo(app => app());
 
 our $timeout = AnyEvent->timer( after => 5, cb => sub {
   diag "timeout!";

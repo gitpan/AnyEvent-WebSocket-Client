@@ -31,6 +31,7 @@ t/mojo_scope.t
 t/mojo_ssl.t
 t/new.t
 t/testlib/Mojo.pm
+t/testlib/Server.pm
 t/use.t
 xt/release/build_environment.t
 xt/release/changes.t

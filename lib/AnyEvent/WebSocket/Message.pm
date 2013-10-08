@@ -8,11 +8,11 @@ use warnings NONFATAL => 'all';
 use Encode ();
 
 # ABSTRACT: WebSocket message for AnyEvent
-our $VERSION = '0.11_02'; # VERSION
+our $VERSION = '0.11_03'; # VERSION
 
 
 has body => ( is => 'ro', required => 1 );
-has opcode => ( is => 'ro', required => 1 );
+has opcode => ( is => 'ro', default => 1 );
 
 
 sub decoded_body
@@ -39,9 +39,13 @@ AnyEvent::WebSocket::Message - WebSocket message for AnyEvent
 
 =head1 VERSION
 
-version 0.11_02
+version 0.11_03
 
 =head1 SYNOPSIS
+
+ $connection->send(
+   AnyEvent::WebSocket::Message->new(body => "some message"),
+ );
 
  $connection->on(each_message => sub {
    my($connection, $message) = @_;

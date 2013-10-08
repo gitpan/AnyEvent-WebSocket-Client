@@ -8,8 +8,9 @@ BEGIN { plan skip_all => 'Requires Mojolicious::Lite' unless eval q{ use Mojolic
 BEGIN { plan skip_all => 'Requires Test::Memory::Cycle' unless eval q{ use Test::Memory::Cycle; 1 } }
 BEGIN { plan skip_all => 'Requires Devel::Cycle' unless eval q{ use Devel::Cycle; 1 } }
 use AnyEvent::WebSocket::Client;
-use lib "t";
-use testlib::Mojo qw(start_mojo);
+use FindBin;
+use lib $FindBin::Bin;
+use testlib::Mojo;
 
 plan tests => 5;
 
@@ -30,7 +31,7 @@ websocket '/foo' => sub {
 };
 
 
-my ($server, $port) = start_mojo(app => app());
+my ($server, $port) =  testlib::Mojo->start_mojo(app => app());
 
 our $timeout = AnyEvent->timer( after => 5, cb => sub {
   diag "timeout!";

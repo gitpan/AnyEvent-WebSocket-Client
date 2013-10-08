@@ -17,7 +17,7 @@ my %module_build_args = (
     "Graham Ollis <plicease\@cpan.org>"
   ],
   "dist_name" => "AnyEvent-WebSocket-Client",
-  "dist_version" => "0.11_02",
+  "dist_version" => "0.11_03",
   "license" => "perl",
   "module_name" => "AnyEvent::WebSocket::Client",
   "recommends" => {
@@ -39,6 +39,7 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "FindBin" => 0,
     "Test::More" => 0
   }
 );
