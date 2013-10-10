@@ -26,7 +26,7 @@ requires:
   AnyEvent: 0
   Carp: 0
   Encode: 0
-  Moo: 0
+  Moo: 1.001000
   PerlX::Maybe: 0.003
   Protocol::WebSocket: 0.12
   URI: 0
@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/plicease/anyevent-websocket-client/issues
   homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client/
   repository: git://github.com/plicease/anyevent-websocket-client.git
-version: 0.14
+version: 0.15
