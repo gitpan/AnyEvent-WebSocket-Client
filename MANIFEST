@@ -13,7 +13,6 @@ example/cpanfile
 example/jobrunner
 example/jobserver
 example/jobviewer
-example/output/7118/1
 example/slowlast
 lib/AnyEvent/WebSocket/Client.pm
 lib/AnyEvent/WebSocket/Connection.pm
