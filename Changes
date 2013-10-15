@@ -1,5 +1,8 @@
 Revision history for AnyEvent-WebSocket-Client
 
+0.15_01   2013-10-15 12:13:57 -0400
+  - public API for creating Connection instance
+
 0.15      2013-10-10 13:20:00 -0400
   - actually require moo 1.001000, and use scalar default value
     that feature should have been there to begin with.

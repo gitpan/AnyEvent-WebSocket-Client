@@ -12,19 +12,12 @@ use AnyEvent::WebSocket::Message;
 use Carp qw( croak carp );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.15_01'; # VERSION
 
 
-has _stream => (
-  is => 'ro',
-  required => 1,
-);
-
-has _handle => (
+has handle => (
   is       => 'ro',
-  lazy     => 1,
-  default  => sub { shift->_stream->handle },
-  weak_ref => 1,
+  required => 1,
 );
 
 foreach my $type (qw( each_message next_message finish ))
@@ -43,12 +36,12 @@ sub BUILD
   my $finish = sub {
     $_->($self) for @{ $self->_finish_cb };
   };
-  $self->_handle->on_error($finish);
-  $self->_handle->on_eof($finish);
+  $self->handle->on_error($finish);
+  $self->handle->on_eof($finish);
 
   my $frame = Protocol::WebSocket::Frame->new;
   
-  $self->_stream->read_cb(sub {
+  $self->handle->on_read(sub {
     $frame->append($_[0]{rbuf});
     while(defined(my $body = $frame->next_bytes))
     {
@@ -82,7 +75,7 @@ sub send
   {
     $frame = Protocol::WebSocket::Frame->new($message);
   }
-  $self->_handle->push_write($frame->to_bytes);
+  $self->handle->push_write($frame->to_bytes);
   $self;
 }
 
@@ -115,9 +108,10 @@ sub close
 {
   my($self) = @_;
 
-  $self->_handle->push_write(Protocol::WebSocket::Frame->new(type => 'close')->to_bytes);
-  $self->_handle->push_shutdown;
+  $self->handle->push_write(Protocol::WebSocket::Frame->new(type => 'close')->to_bytes);
+  $self->handle->push_shutdown;
 }
+
 
 
 sub on_each_message
@@ -162,7 +156,7 @@ AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.15
+version 0.15_01
 
 =head1 SYNOPSIS
 
@@ -207,6 +201,16 @@ C<AnyEvent::WebSocket::Server> is ever created (after the
 handshake is complete, the client and server look pretty
 much the same).
 
+=head1 ATTRIBUTES
+
+=head2 handle
+
+The underlying L<AnyEvent::Handle> object used for the connection.
+WebSocket handshake MUST be already completed using this handle.
+You should not use the handle directly after creating L<AnyEvent::WebSocket::Connection> object.
+
+Usually only useful for creating server connections, see below.
+
 =head1 METHODS
 
 =head2 $connection-E<gt>send($message)
@@ -245,6 +249,14 @@ Called when the connection is terminated
 =head2 $connection-E<gt>close
 
 Close the connection.
+
+=head1 SERVER CONNECTIONS
+
+Although written originally to work with L<AnyEvent::WebSocket::Client>,
+this class was designed to be used for either client or server WebSocket
+connections.  For details, contact the author and/or take a look at the
+source for L<AnyEvent::WebSocket::Client> and the examples that come with
+L<Protocol::WebSocket>.
 
 =head1 DEPRECATED METHODS
 
