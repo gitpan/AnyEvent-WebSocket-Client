@@ -17,7 +17,7 @@ my %module_build_args = (
     "Graham Ollis <plicease\@cpan.org>"
   ],
   "dist_name" => "AnyEvent-WebSocket-Client",
-  "dist_version" => "0.15_01",
+  "dist_version" => "0.16",
   "license" => "perl",
   "module_name" => "AnyEvent::WebSocket::Client",
   "recommends" => {

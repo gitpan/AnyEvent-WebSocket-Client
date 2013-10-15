@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/plicease/anyevent-websocket-client/issues
   homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client/
   repository: git://github.com/plicease/anyevent-websocket-client.git
-version: 0.15_01
+version: 0.16
