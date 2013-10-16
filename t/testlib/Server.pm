@@ -42,7 +42,7 @@ sub start_server
           if($handshake->is_done)
           {
             $hdl->push_write($handshake->to_string);
-            $handshake_cb->($handshake)
+            $handshake_cb->($handshake, $hdl)
               if $handshake_cb;
           }
           return;

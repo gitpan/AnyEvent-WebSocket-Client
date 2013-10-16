@@ -30,6 +30,7 @@ t/mojo_recieve.t
 t/mojo_scope.t
 t/mojo_ssl.t
 t/new.t
+t/server_initial_data.t
 t/testlib/Mojo.pm
 t/testlib/Server.pm
 t/use.t
