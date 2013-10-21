@@ -2,7 +2,7 @@ NAME
     AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 VERSION
-    version 0.17
+    version 0.18
 
 SYNOPSIS
      use AnyEvent::WebSocket::Client 0.12;
@@ -85,6 +85,8 @@ SEE ALSO
     *   AnyEvent::WebSocket::Connection
 
     *   AnyEvent::WebSocket::Message
+
+    *   AnyEvent::WebSocket::Server
 
     *   AnyEvent
 
