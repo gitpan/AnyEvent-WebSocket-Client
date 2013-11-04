@@ -2,7 +2,7 @@ NAME
     AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 VERSION
-    version 0.18
+    version 0.19
 
 SYNOPSIS
      use AnyEvent::WebSocket::Client 0.12;
@@ -95,6 +95,10 @@ SEE ALSO
     *   URI::wss
 
     *   Protocol::WebSocket
+
+    *   Net::WebSocket::Server
+
+    *   Net::Async::WebSocket
 
     *   RFC 6455 The WebSocket Protocol <http://tools.ietf.org/html/rfc6455>
 

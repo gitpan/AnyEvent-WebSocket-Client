@@ -41,7 +41,7 @@
             "Encode" : "0",
             "Moo" : "1.001000",
             "PerlX::Maybe" : "0.003",
-            "Protocol::WebSocket" : "0.12",
+            "Protocol::WebSocket" : "0.15",
             "URI" : "0",
             "URI::ws" : "0",
             "perl" : "v5.10.0"
@@ -57,6 +57,7 @@
          },
          "requires" : {
             "FindBin" : "0",
+            "Protocol::WebSocket" : "0.13",
             "Test::More" : "0"
          }
       }
@@ -73,6 +74,6 @@
          "web" : "https://github.com/plicease/anyevent-websocket-client"
       }
    },
-   "version" : "0.18"
+   "version" : "0.19"
 }
 

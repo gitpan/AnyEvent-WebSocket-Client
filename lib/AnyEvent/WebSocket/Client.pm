@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 
 has timeout => (
@@ -93,7 +93,7 @@ sub connect
       elsif($handshake->is_done)
       {
         undef $handshake;
-        $done->send(AnyEvent::WebSocket::Connection->new(handle => $hdl));
+        $done->send(AnyEvent::WebSocket::Connection->new(handle => $hdl, masked => 1));
         undef $hdl;
         undef $done;
       }
@@ -114,7 +114,7 @@ AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
@@ -233,6 +233,14 @@ L<URI::wss>
 =item *
 
 L<Protocol::WebSocket>
+
+=item *
+
+L<Net::WebSocket::Server>
+
+=item *
+
+L<Net::Async::WebSocket>
 
 =item *
 
