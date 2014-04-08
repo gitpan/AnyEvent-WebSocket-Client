@@ -2,7 +2,6 @@ package AnyEvent::WebSocket::Connection;
 
 use strict;
 use warnings;
-use v5.10;
 use Moo;
 use warnings NONFATAL => 'all';
 use Protocol::WebSocket::Frame;
@@ -13,7 +12,7 @@ use AnyEvent::WebSocket::Message;
 use Carp qw( croak carp );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 
 has handle => (
@@ -136,7 +135,6 @@ sub send
   
   if(ref $message)
   {
-    $DB::single = 1;
     $frame = Protocol::WebSocket::Frame->new(buffer => $message->body, masked => $self->masked);
     $frame->opcode($message->opcode);
   }
@@ -220,13 +218,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 
@@ -253,22 +253,22 @@ version 0.20
  # a callback)
  $connection->close;
 
-(See L<AnyEvent::WebSocket::Client> on how to create
-a connection)
+(See L<AnyEvent::WebSocket::Client> or L<AnyEvent::WebSocket::Server> on 
+how to create a connection)
 
 =head1 DESCRIPTION
 
-This class represents a WebSocket connection with a remote
-server or a client.
+This class represents a WebSocket connection with a remote server or a 
+client.
 
-If the connection object falls out of scope then the connection
-will be closed gracefully.
+If the connection object falls out of scope then the connection will be 
+closed gracefully.
 
-This class was created for a client to connect to a server 
-via L<AnyEvent::WebSocket::Client>, but it may be useful to
-reuse it for a server to interact with a client. After the
-handshake is complete, the client and server look pretty
-much the same.
+This class was created for a client to connect to a server via 
+L<AnyEvent::WebSocket::Client>, and was later extended to work on the 
+server side via L<AnyEvent::WebSocket::Server>.  Once a WebSocket 
+connection is established, the API for both client and server is 
+identical.
 
 =head1 ATTRIBUTES
 

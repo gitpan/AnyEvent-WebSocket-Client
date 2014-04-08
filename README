@@ -1,23 +1,26 @@
 NAME
+
     AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 VERSION
-    version 0.20
+
+    version 0.21
 
 SYNOPSIS
+
      use AnyEvent::WebSocket::Client 0.12;
- 
+     
      my $client = AnyEvent::WebSocket::Client->new;
- 
+     
      $client->connect("ws://localhost:1234/service")->cb(sub {
        my $connection = eval { shift->recv };
        if($@) {
          # handle error...
        }
-   
+       
        # send a message through the websocket...
        $connection->send('a message');
-   
+       
        # recieve message from the websocket...
        $connection->on(each_message => sub {
          # $connection is the same connection object
@@ -25,21 +28,22 @@ SYNOPSIS
          my($connection, $message) = @_;
          ...
        });
-   
+       
        # handle a closed connection...
        $connection->on(finish => sub {
          # $connection is the same connection object
          my($connection) = @_;
          ...
        });
-
+    
        # close the connection (either inside or
        # outside another callback)
        $connection->close;
- 
+     
      });
 
 DESCRIPTION
+
     This class provides an interface to interact with a web server that
     provides services via the WebSocket protocol in an AnyEvent context. It
     uses Protocol::WebSocket rather than reinventing the wheel. You could
@@ -53,56 +57,67 @@ DESCRIPTION
     now with deprecation warnings.
 
 ATTRIBUTES
-  timeout
-    Timeout for the initial connection to the web server. The default is 30.
 
-  ssl_no_verify
-    If set to true, then secure WebSockets (those that use SSL/TLS) will not
-    be verified. The default is false.
+ timeout
 
-  ssl_ca_file
+    Timeout for the initial connection to the web server. The default is
+    30.
+
+ ssl_no_verify
+
+    If set to true, then secure WebSockets (those that use SSL/TLS) will
+    not be verified. The default is false.
+
+ ssl_ca_file
+
     Provide your own CA certificates file instead of using the system
     default for SSL/TLS verification.
 
 METHODS
-  $client->connect($uri)
-    Open a connection to the web server and open a WebSocket to the resource
-    defined by the given URL. The URL may be either an instance of URI::ws,
-    URI::wss, or a string that represents a legal WebSocket URL.
+
+ $client->connect($uri)
+
+    Open a connection to the web server and open a WebSocket to the
+    resource defined by the given URL. The URL may be either an instance of
+    URI::ws, URI::wss, or a string that represents a legal WebSocket URL.
 
     This method will return an AnyEvent condition variable which you can
-    attach a callback to. The value sent through the condition variable will
-    be either an instance of AnyEvent::WebSocket::Connection or a croak
-    message indicating a failure. The synopsis above shows how to catch such
-    errors using "eval".
+    attach a callback to. The value sent through the condition variable
+    will be either an instance of AnyEvent::WebSocket::Connection or a
+    croak message indicating a failure. The synopsis above shows how to
+    catch such errors using eval.
 
 CAVEATS
+
     This is pretty simple minded and there are probably WebSocket features
     that you might like to use that aren't supported by this distribution.
     Patches are encouraged to improve it.
 
 SEE ALSO
-    *   AnyEvent::WebSocket::Connection
 
-    *   AnyEvent::WebSocket::Message
+      * AnyEvent::WebSocket::Connection
 
-    *   AnyEvent::WebSocket::Server
+      * AnyEvent::WebSocket::Message
 
-    *   AnyEvent
+      * AnyEvent::WebSocket::Server
 
-    *   URI::ws
+      * AnyEvent
 
-    *   URI::wss
+      * URI::ws
 
-    *   Protocol::WebSocket
+      * URI::wss
 
-    *   Net::WebSocket::Server
+      * Protocol::WebSocket
 
-    *   Net::Async::WebSocket
+      * Net::WebSocket::Server
 
-    *   RFC 6455 The WebSocket Protocol <http://tools.ietf.org/html/rfc6455>
+      * Net::Async::WebSocket
+
+      * RFC 6455 The WebSocket Protocol
+      <http://tools.ietf.org/html/rfc6455>
 
 AUTHOR
+
     author: Graham Ollis <plicease@cpan.org>
 
     contributors:
@@ -110,6 +125,7 @@ AUTHOR
     Toshio Ito
 
 COPYRIGHT AND LICENSE
+
     This software is copyright (c) 2013 by Graham Ollis.
 
     This is free software; you can redistribute it and/or modify it under

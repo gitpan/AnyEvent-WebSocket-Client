@@ -2,13 +2,12 @@ package AnyEvent::WebSocket::Message;
 
 use strict;
 use warnings;
-use v5.10;
 use Moo;
 use warnings NONFATAL => 'all';
 use Encode ();
 
 # ABSTRACT: WebSocket message for AnyEvent
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 
 has body => ( is => 'ro', required => 1 );
@@ -33,13 +32,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 AnyEvent::WebSocket::Message - WebSocket message for AnyEvent
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 

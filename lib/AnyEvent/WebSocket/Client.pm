@@ -2,7 +2,6 @@ package AnyEvent::WebSocket::Client;
 
 use strict;
 use warnings;
-use v5.10;
 use Moo;
 use warnings NONFATAL => 'all';
 use AnyEvent;
@@ -13,7 +12,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 
 has timeout => (
@@ -108,13 +107,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 
