@@ -6,11 +6,11 @@ build_requires:
   FindBin: '0'
   Module::Build: '0.3601'
   Protocol::WebSocket: '0.15'
-  Test::More: '0'
+  Test::More: '0.94'
 configure_requires:
   Module::Build: '0.3601'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,7 +21,9 @@ no_index:
     - example
 recommends:
   EV: '0'
+  IO::Socket::SSL: '0'
   Math::Random::Secure: '0'
+  Net::SSLeay: '0'
   PerlX::Maybe::XS: '0'
 requires:
   AnyEvent: '0'
@@ -34,7 +36,7 @@ requires:
   URI::ws: '0'
   perl: '5.008'
 resources:
-  bugtracker: https://github.com/plicease/anyevent-websocket-client/issues
-  homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client/
-  repository: git://github.com/plicease/anyevent-websocket-client.git
-version: '0.21'
+  bugtracker: https://github.com/plicease/AnyEvent-WebSocket-Client/issues
+  homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client
+  repository: git://github.com/plicease/AnyEvent-WebSocket-Client.git
+version: '0.22'

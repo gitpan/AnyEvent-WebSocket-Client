@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520",
    "license" : [
       "perl_5"
    ],
@@ -32,7 +32,9 @@
       "runtime" : {
          "recommends" : {
             "EV" : "0",
+            "IO::Socket::SSL" : "0",
             "Math::Random::Secure" : "0",
+            "Net::SSLeay" : "0",
             "PerlX::Maybe::XS" : "0"
          },
          "requires" : {
@@ -58,22 +60,22 @@
          "requires" : {
             "FindBin" : "0",
             "Protocol::WebSocket" : "0.15",
-            "Test::More" : "0"
+            "Test::More" : "0.94"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/plicease/anyevent-websocket-client/issues"
+         "web" : "https://github.com/plicease/AnyEvent-WebSocket-Client/issues"
       },
-      "homepage" : "http://perl.wdlabs.com/AnyEvent-WebSocket-Client/",
+      "homepage" : "http://perl.wdlabs.com/AnyEvent-WebSocket-Client",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/plicease/anyevent-websocket-client.git",
-         "web" : "https://github.com/plicease/anyevent-websocket-client"
+         "url" : "git://github.com/plicease/AnyEvent-WebSocket-Client.git",
+         "web" : "https://github.com/plicease/AnyEvent-WebSocket-Client"
       }
    },
-   "version" : "0.21"
+   "version" : "0.22"
 }
 
