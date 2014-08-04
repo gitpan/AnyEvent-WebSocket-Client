@@ -38,6 +38,7 @@
             "PerlX::Maybe::XS" : "0"
          },
          "requires" : {
+            "AE" : "0",
             "AnyEvent" : "0",
             "Carp" : "0",
             "Encode" : "0",
@@ -76,6 +77,6 @@
          "web" : "https://github.com/plicease/AnyEvent-WebSocket-Client"
       }
    },
-   "version" : "0.22"
+   "version" : "0.23"
 }
 

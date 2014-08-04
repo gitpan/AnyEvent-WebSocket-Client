@@ -1,5 +1,9 @@
 Revision history for AnyEvent-WebSocket-Client
 
+0.23      2014-08-04 12:41:07 -0400
+  - documentation improvements
+  - use AE:: instead of AnyEvent-> for performance
+
 0.22      2014-06-19 15:33:56 -0400
   - Mojo 5.x compat (testing only)
 

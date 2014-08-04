@@ -26,6 +26,7 @@ recommends:
   Net::SSLeay: '0'
   PerlX::Maybe::XS: '0'
 requires:
+  AE: '0'
   AnyEvent: '0'
   Carp: '0'
   Encode: '0'
@@ -39,4 +40,4 @@ resources:
   bugtracker: https://github.com/plicease/AnyEvent-WebSocket-Client/issues
   homepage: http://perl.wdlabs.com/AnyEvent-WebSocket-Client
   repository: git://github.com/plicease/AnyEvent-WebSocket-Client.git
-version: '0.22'
+version: '0.23'
