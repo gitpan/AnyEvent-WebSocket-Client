@@ -4,7 +4,7 @@ NAME
 
 VERSION
 
-    version 0.24
+    version 0.25
 
 SYNOPSIS
 
@@ -43,10 +43,11 @@ SYNOPSIS
        $connection->close;
      
      });
-     
-     ## uncomment this for simple scripts that
-     ## do not otherwise enter the event loop:
-     #EV::loop();
+    
+     ## uncomment to enter the event loop before exiting.
+     ## Note that calling recv on a condition variable before
+     ## it has been triggered does not work on all event loops
+     #AnyEvent->condvar->recv;
 
 DESCRIPTION
 
@@ -98,7 +99,7 @@ FAQ
  My program exits before doing anything, what is up with that?
 
     See this FAQ from AnyEvent:
-    AnyEvent#My-program-exits-before-doing-anything-whats-going-on.
+    AnyEvent::FAQ#My-program-exits-before-doing-anything-whats-going-on.
 
     It is probably also a good idea to review the AnyEvent documentation if
     you are new to AnyEvent or event-based programming.

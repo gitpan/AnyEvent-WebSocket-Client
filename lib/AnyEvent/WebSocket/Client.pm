@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 
 has timeout => (
@@ -116,7 +116,7 @@ AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
@@ -155,10 +155,11 @@ version 0.24
    $connection->close;
  
  });
- 
- ## uncomment this for simple scripts that
- ## do not otherwise enter the event loop:
- #EV::loop();
+
+ ## uncomment to enter the event loop before exiting.
+ ## Note that calling recv on a condition variable before
+ ## it has been triggered does not work on all event loops
+ #AnyEvent->condvar->recv;
 
 =head1 DESCRIPTION
 
@@ -209,7 +210,7 @@ such errors using C<eval>.
 =head2 My program exits before doing anything, what is up with that?
 
 See this FAQ from L<AnyEvent>: 
-L<AnyEvent#My-program-exits-before-doing-anything-whats-going-on>.
+L<AnyEvent::FAQ#My-program-exits-before-doing-anything-whats-going-on>.
 
 It is probably also a good idea to review the L<AnyEvent> documentation
 if you are new to L<AnyEvent> or event-based programming.
