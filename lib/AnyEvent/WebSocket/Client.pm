@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Connection;
 use PerlX::Maybe qw( maybe provided );
 
 # ABSTRACT: WebSocket client for AnyEvent
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 
 has timeout => (
@@ -116,7 +116,7 @@ AnyEvent::WebSocket::Client - WebSocket client for AnyEvent
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 
@@ -155,6 +155,10 @@ version 0.23
    $connection->close;
  
  });
+ 
+ ## uncomment this for simple scripts that
+ ## do not otherwise enter the event loop:
+ #EV::loop();
 
 =head1 DESCRIPTION
 
@@ -200,6 +204,16 @@ be either an instance of L<AnyEvent::WebSocket::Connection> or a croak
 message indicating a failure.  The synopsis above shows how to catch
 such errors using C<eval>.
 
+=head1 FAQ
+
+=head2 My program exits before doing anything, what is up with that?
+
+See this FAQ from L<AnyEvent>: 
+L<AnyEvent#My-program-exits-before-doing-anything-whats-going-on>.
+
+It is probably also a good idea to review the L<AnyEvent> documentation
+if you are new to L<AnyEvent> or event-based programming.
+
 =head1 CAVEATS
 
 This is pretty simple minded and there are probably WebSocket features
@@ -208,14 +222,14 @@ Patches are encouraged to improve it.
 
 If you see warnings like this:
 
- Class::MOP::load_class is deprecated at /home/ollisg/.perlbrew/libs/perl-5.18.2c34@dev/lib/perl5/x86_64-linux/Class/MOP.pm line 71.
- Class::MOP::load_class("Crypt::Random::Source::Weak::devurandom") called at /home/ollisg/.perlbrew/libs/perl-5.18.2c34@dev/lib/perl5/Crypt/Random/Source/Factory.pm line 137
+ Class::MOP::load_class is deprecated at .../Class/MOP.pm line 71.
+ Class::MOP::load_class("Crypt::Random::Source::Weak::devurandom") called at .../Crypt/Random/Source/Factory.pm line 137
  ...
 
 The problem is in the optional L<Crypt::Random::Source> module, and has
 been reported here:
 
-https://rt.cpan.org/Ticket/Display.html?id=93163&results=822cf3902026ad4a64ae94b0175207d6
+L<https://rt.cpan.org/Ticket/Display.html?id=93163&results=822cf3902026ad4a64ae94b0175207d6>
 
 You can use the patch provided there to silence the warnings.
 

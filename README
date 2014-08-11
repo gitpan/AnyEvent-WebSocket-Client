@@ -4,7 +4,7 @@ NAME
 
 VERSION
 
-    version 0.23
+    version 0.24
 
 SYNOPSIS
 
@@ -43,6 +43,10 @@ SYNOPSIS
        $connection->close;
      
      });
+     
+     ## uncomment this for simple scripts that
+     ## do not otherwise enter the event loop:
+     #EV::loop();
 
 DESCRIPTION
 
@@ -89,6 +93,16 @@ METHODS
     croak message indicating a failure. The synopsis above shows how to
     catch such errors using eval.
 
+FAQ
+
+ My program exits before doing anything, what is up with that?
+
+    See this FAQ from AnyEvent:
+    AnyEvent#My-program-exits-before-doing-anything-whats-going-on.
+
+    It is probably also a good idea to review the AnyEvent documentation if
+    you are new to AnyEvent or event-based programming.
+
 CAVEATS
 
     This is pretty simple minded and there are probably WebSocket features
@@ -97,8 +111,8 @@ CAVEATS
 
     If you see warnings like this:
 
-     Class::MOP::load_class is deprecated at /home/ollisg/.perlbrew/libs/perl-5.18.2c34@dev/lib/perl5/x86_64-linux/Class/MOP.pm line 71.
-     Class::MOP::load_class("Crypt::Random::Source::Weak::devurandom") called at /home/ollisg/.perlbrew/libs/perl-5.18.2c34@dev/lib/perl5/Crypt/Random/Source/Factory.pm line 137
+     Class::MOP::load_class is deprecated at .../Class/MOP.pm line 71.
+     Class::MOP::load_class("Crypt::Random::Source::Weak::devurandom") called at .../Crypt/Random/Source/Factory.pm line 137
      ...
 
     The problem is in the optional Crypt::Random::Source module, and has
