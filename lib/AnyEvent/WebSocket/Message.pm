@@ -7,7 +7,7 @@ use warnings NONFATAL => 'all';
 use Encode ();
 
 # ABSTRACT: WebSocket message for AnyEvent
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 
 has body => ( is => 'ro', required => 1 );
@@ -40,7 +40,7 @@ AnyEvent::WebSocket::Message - WebSocket message for AnyEvent
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

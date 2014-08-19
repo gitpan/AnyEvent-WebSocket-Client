@@ -14,6 +14,7 @@ example/jobrunner
 example/jobserver
 example/jobviewer
 example/slowlast
+inc/My/ModuleBuild.pm
 lib/AnyEvent/WebSocket/Client.pm
 lib/AnyEvent/WebSocket/Connection.pm
 lib/AnyEvent/WebSocket/Message.pm

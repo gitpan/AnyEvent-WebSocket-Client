@@ -13,7 +13,7 @@ use AnyEvent::WebSocket::Message;
 use Carp qw( croak carp );
 
 # ABSTRACT: WebSocket connection for AnyEvent
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 
 has handle => (
@@ -227,7 +227,7 @@ AnyEvent::WebSocket::Connection - WebSocket connection for AnyEvent
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
