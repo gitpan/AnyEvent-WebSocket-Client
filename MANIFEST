@@ -25,6 +25,7 @@ t/ae.t
 t/ae_ssl.t
 t/client_masked.t
 t/connection_after_close.t
+t/connection_callback_send.t
 t/connection_counter_close.t
 t/connection_counter_shutdown.t
 t/connection_destroy_in_callbacks.t
